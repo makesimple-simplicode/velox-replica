@@ -25,10 +25,10 @@ h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.05}
 .mono{font-family:"Fragment Mono",monospace;font-size:13px;color:var(--muted)}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font:600 15px/1 var(--font);
-  padding:14px 22px;border-radius:8px;border:0;cursor:pointer;transition:background .3s ease,transform .3s ease}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;font:600 15.5px/1 var(--font);
+  padding:16px 26px;border-radius:8px;border:0;cursor:pointer;transition:background .3s ease,transform .3s ease}
 .btn:hover{background:#2a2a2a;transform:translateY(-2px)}
-.btn .ar{transition:transform .3s ease}
+.btn .ar{transition:transform .3s ease;color:var(--red)}
 .btn:hover .ar{transform:translate(2px,-2px)}
 .btn-o{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);font:600 15px/1 var(--font);
   padding:13px 22px;border-radius:999px;border:1px solid var(--line);cursor:pointer;transition:border-color .3s,color .3s}
@@ -38,44 +38,42 @@ h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.05}
 .link-r:hover{color:var(--red-dark)}
 
 /* ============ ticker ============ */
-.ticker{background:var(--red);color:#fff;font-size:13px;font-weight:600;height:34px;display:flex;align-items:center;overflow:hidden}
-.ticker-track{display:flex;gap:48px;white-space:nowrap;animation:tick 28s linear infinite;padding-left:100%}
-.ticker-track span{display:inline-flex;gap:8px;align-items:center}
-.ticker .jbtn{background:var(--ink);color:#fff;border-radius:4px;padding:3px 10px;font-size:12px}
-@keyframes tick{to{transform:translateX(-100%)}}
+.ticker{background:var(--red);color:#fff;font-size:13px;font-weight:600;height:34px;display:flex;align-items:center;justify-content:center}
+.ticker-track{display:inline-flex;gap:10px;white-space:nowrap;align-items:center}
+.ticker .jbtn{background:var(--ink);color:#fff;border-radius:5px;padding:4px 12px;font-size:12px;display:inline-flex;gap:6px;align-items:center;transition:background .3s}
+.ticker .jbtn:hover{background:#262626}
 
 /* ============ nav ============ */
 .nav{position:fixed;top:34px;left:0;right:0;background:#fff;z-index:60;border-bottom:1px solid transparent;transition:border-color .3s}
 .nav.scrolled{border-color:var(--line)}
 .nav-in{max-width:1440px;margin:0 auto;padding:0 var(--page);height:70px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:17px;letter-spacing:-.02em}
-.logo .bolt{color:var(--red)}
+.logo svg.bolt{display:block}
 .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500}
 .nav-links a{transition:color .4s cubic-bezier(.44,0,.56,1);display:flex;gap:4px;align-items:center}
 .nav-links a:hover{color:var(--muted)}
-.nav-cta{background:var(--ink);color:#fff;padding:11px 18px;border-radius:6px;font-weight:600;font-size:14px;transition:background .3s}
+.nav-cta{background:var(--ink);color:#fff;padding:13px 22px;border-radius:7px;font-weight:600;font-size:14.5px;transition:background .3s;display:inline-flex;gap:7px;align-items:center}
+.nav-cta .ar{color:var(--red)}
 .nav-cta:hover{background:#2a2a2a}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
 .burger span{width:22px;height:2px;background:var(--ink);display:block}
 
 /* ============ hero ============ */
-.hero{padding:170px 0 70px}
+.hero{padding:150px 0 60px}
 .hero-grid{display:grid;grid-template-columns:1.9fr 1fr;gap:60px;align-items:start}
 .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:600}
-.hero h1{font-size:clamp(44px,5.4vw,76px);font-weight:800;letter-spacing:-.04em;margin-top:28px}
-.hero h1 .line{position:relative;display:inline-flex;align-items:center;gap:16px}
-.hero h1 .line::after{content:"";height:3px;background:var(--red);flex:1;min-width:60px}
+.hero h1{font-size:clamp(42px,4.7vw,68px);font-weight:800;letter-spacing:-.04em;line-height:.98;margin-top:26px}
+.sq{display:inline-block;width:.14em;height:.14em;background:var(--red);border-radius:.02em;margin-left:.06em}
 .checks{display:flex;gap:24px;margin-top:32px;font-size:14px;font-weight:600;flex-wrap:wrap}
 .checks span::before{content:"✓";color:var(--red);margin-right:7px}
-.hero-right p{font-size:16px;line-height:1.6;color:var(--ink);max-width:340px}
+.hero-right p{font-size:16px;line-height:1.6;color:var(--ink);max-width:470px}
 .hero-right .btn{margin-top:26px}
-.social{display:flex;align-items:center;gap:12px;margin-top:26px}
+.social{display:flex;align-items:center;gap:12px;margin-top:26px;flex-wrap:nowrap}
 .avs{display:flex}
-.avs img{width:44px;height:44px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-12px;background:#eee}
+.avs img{width:40px;height:40px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-12px;background:#eee}
 .avs img:first-child{margin-left:0}
-.social .rate{font-size:13px;font-weight:500}
-.social .rate b{display:block}
-.social .star{color:#f5b301}
+.social .rate{font-size:13px;font-weight:500;white-space:nowrap}
+.social .star{color:var(--red)}
 
 /* ============ featured ============ */
 .panel{background:var(--light);border-radius:24px;padding:48px 40px;margin-top:60px}
@@ -284,8 +282,9 @@ h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.05}
 
 /* ============ footer ============ */
 footer{background:#f7f7f7;padding:70px 0 34px;position:relative;overflow:hidden}
-footer .ghost{position:absolute;right:-60px;top:-40px;font-size:420px;color:#e8e8e8;opacity:.5;line-height:1;pointer-events:none;font-weight:800}
-.fgrid{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:36px;position:relative}
+footer .ghost{position:absolute;right:-40px;top:-30px;width:340px;height:440px;opacity:.7;pointer-events:none;transform:rotate(12deg)}
+.flogo{margin-bottom:44px;position:relative}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;position:relative}
 .fcol h5{font-family:"Fragment Mono",monospace;font-weight:400;font-size:13px;color:var(--muted);margin-bottom:16px}
 .fcol a{display:block;font-size:15px;font-weight:600;padding:5px 0;transition:color .4s cubic-bezier(.44,0,.56,1)}
 .fcol a:hover{color:var(--red)}
@@ -342,25 +341,23 @@ footer .ghost{position:absolute;right:-60px;top:-40px;font-size:420px;color:#e8e
 <body>
 
 <!-- ticker -->
-<div class="ticker" aria-hidden="true">
+<div class="ticker">
   <div class="ticker-track">
-    <span>📣 Post Reels, <b>Get a FREE Premium Template</b> <a class="jbtn" href="#">How to join ↗</a></span>
-    <span>⚡ Templates from $99 — ship in days</span>
-    <span>📣 Post Reels, <b>Get a FREE Premium Template</b> <a class="jbtn" href="#">How to join ↗</a></span>
-    <span>⚡ Templates from $99 — ship in days</span>
+    <span>📣 Post Reels, <b>&nbsp;Get a FREE Premium Template</b> •</span>
+    <a class="jbtn" href="#">How to join ↗</a>
   </div>
 </div>
 
 <!-- nav -->
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a class="logo" href="#">VELOX <span class="bolt">⚡</span> THEMES</a>
+    <a class="logo" href="#">VELOX <svg class="bolt" viewBox="0 0 24 24" width="15" height="19" aria-hidden="true"><path fill="#de362a" d="M13.5 2 4 13.5h6L9.5 22 20 10h-6.7z"/></svg> THEMES</a>
     <nav class="nav-links">
-      <a href="#templates">Templates ▾</a>
-      <a href="#faq">Resources ▾</a>
+      <a href="#templates">Templates <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <a href="#faq">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
       <a href="#components">Components</a>
       <a href="#showcase">Showcase</a>
-      <a class="nav-cta" href="#">Get All Access ↗</a>
+      <a class="nav-cta" href="#">Get All Access <span class="ar">↗</span></a>
     </nav>
     <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -370,12 +367,8 @@ footer .ghost{position:absolute;right:-60px;top:-40px;font-size:420px;color:#e8e
 <section class="hero wrap">
   <div class="hero-grid">
     <div>
-      <span class="pill">⬛ Premium Framer Templates</span>
-      <h1>
-        <span class="line">Client winning</span><br>
-        Framer templates<br>
-        for agencies<span class="dot">.</span>
-      </h1>
+      <span class="pill"><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path fill="#0a0a0a" d="M3 1l10 6.2-4.4.9L10 14l-2 .9-1.5-5.7L3 12z"/></svg> Premium Framer Templates</span>
+      <h1>Client winning<br>Framer templates<br>for agencies<span class="sq"></span></h1>
       <div class="checks"><span>No code required</span><span>Fast support</span><span>Ship faster</span></div>
     </div>
     <div class="hero-right">
@@ -389,7 +382,7 @@ footer .ghost{position:absolute;right:-60px;top:-40px;font-size:420px;color:#e8e
           <img src="https://framerusercontent.com/images/JCkMdRFGHe80UN5ivsJNnK6hliI.png?width=151&height=150" alt="Malik">
           <img src="https://framerusercontent.com/images/lH4VODCVPW4RRAFykbELkn3oSbQ.png?width=151&height=150" alt="Elias">
         </div>
-        <div class="rate"><span class="star">★</span> <b>5.0</b> Loved by 1954+ agencies</div>
+        <div class="rate"><span class="star">★</span>&nbsp;5.0&nbsp;•&nbsp;Loved by 1954+ agencies</div>
       </div>
     </div>
   </div>
@@ -423,8 +416,10 @@ footer .ghost{position:absolute;right:-60px;top:-40px;font-size:420px;color:#e8e
 </section>
 
 <!-- component -->
-<section class="wrap" id="components">
-  <div class="comp rv">
+<section class="wrap" id="components" style="text-align:center">
+  <h2 class="rv" style="font-size:clamp(30px,3.6vw,44px);margin-top:100px">Framer Components</h2>
+  <p class="rv" style="max-width:560px;margin:16px auto 0;color:var(--ink);font-size:16px;line-height:1.6">Framer components to level up your website and WOW potential clients</p>
+  <div class="comp rv" style="text-align:left">
     <div class="carousel3d">
       <div class="lane">
         <img src="https://framerusercontent.com/images/QexhIvO1yH58q23q07pmvSBfXZs.png?width=1449&height=840" alt="">
@@ -501,7 +496,7 @@ footer .ghost{position:absolute;right:-60px;top:-40px;font-size:420px;color:#e8e
       <h3>Fast support when you need help<span class="dot">.</span></h3>
       <p>Count on us when you need help. We typically respond in under 24 hours, keeping everything smooth so your build stays on track.</p>
     </div>
-    <div class="zmedia"><img src="https://framerusercontent.com/images/PWai7EJaJkfehhMyqKoNZApdY.png?width=173&height=166" alt="support" style="width:auto;height:auto;object-fit:contain;max-height:100%;padding:30px"></div>
+    <div class="zmedia" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -575,21 +570,7 @@ footer .ghost{position:absolute;right:-60px;top:-40px;font-size:420px;color:#e8e
 <section class="loved">
   <div class="wrap"><h2><span class="r">Loved by creatives</span><br>all over the world.</h2></div>
   <div class="marquee">
-    <div class="mtrack" id="mtrack">
-      <div class="vcard"><img src="https://framerusercontent.com/images/ELV0cjxxi6A2pcwDV5ic5gtzWzw.png?width=960&height=1176" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/VRiWaTzVcDOw2gOCh2Uqjjq4M.jpg?width=338&height=338" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/rVIJOnwlEjAKMdj4SYHj34DLpc.png?width=800&height=800" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/PWai7EJaJkfehhMyqKoNZApdY.png?width=173&height=166" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/hRiDQx7kwQhM6Evh6TRFrxLAlBg.png?width=416&height=416" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/yOHSGb16ZdQtKs6BjEI3L1dImE.png?width=800&height=800" alt=""><button class="play">▶</button></div>
-      <!-- duplicate for seamless loop -->
-      <div class="vcard"><img src="https://framerusercontent.com/images/ELV0cjxxi6A2pcwDV5ic5gtzWzw.png?width=960&height=1176" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/VRiWaTzVcDOw2gOCh2Uqjjq4M.jpg?width=338&height=338" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/rVIJOnwlEjAKMdj4SYHj34DLpc.png?width=800&height=800" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/PWai7EJaJkfehhMyqKoNZApdY.png?width=173&height=166" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/hRiDQx7kwQhM6Evh6TRFrxLAlBg.png?width=416&height=416" alt=""><button class="play">▶</button></div>
-      <div class="vcard"><img src="https://framerusercontent.com/images/yOHSGb16ZdQtKs6BjEI3L1dImE.png?width=800&height=800" alt=""><button class="play">▶</button></div>
-    </div>
+    <div class="mtrack" id="mtrack"><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/af0daf22-8875-415e-9d51-7255944c2ab0_Lukas-1.mp4"></video><button class="play" aria-label="Play">▶</button></div><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/8ff64fe4-a672-4a76-a752-0e0393376150_Alena-2.mp4"></video><button class="play" aria-label="Play">▶</button></div><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/04877f61-3b82-4fc3-8f03-64471b7ef39c_Julia_cxtdpt.mp4"></video><button class="play" aria-label="Play">▶</button></div><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/bbb8deec-fa98-46bf-97e6-048e634dc916_Yujin_Lee-shorts_y4yjyq.mp4"></video><button class="play" aria-label="Play">▶</button></div><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/7195dcd7-f0c3-4d48-ac91-0c22732df433_Sheryl_zcz42b.mp4"></video><button class="play" aria-label="Play">▶</button></div><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/af0daf22-8875-415e-9d51-7255944c2ab0_Lukas-1.mp4"></video><button class="play" aria-label="Play">▶</button></div><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/8ff64fe4-a672-4a76-a752-0e0393376150_Alena-2.mp4"></video><button class="play" aria-label="Play">▶</button></div><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/04877f61-3b82-4fc3-8f03-64471b7ef39c_Julia_cxtdpt.mp4"></video><button class="play" aria-label="Play">▶</button></div><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/bbb8deec-fa98-46bf-97e6-048e634dc916_Yujin_Lee-shorts_y4yjyq.mp4"></video><button class="play" aria-label="Play">▶</button></div><div class="vcard"><video muted loop playsinline autoplay preload="metadata" src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/7195dcd7-f0c3-4d48-ac91-0c22732df433_Sheryl_zcz42b.mp4"></video><button class="play" aria-label="Play">▶</button></div></div>
   </div>
 </section>
 
@@ -718,12 +699,12 @@ footer .ghost{position:absolute;right:-60px;top:-40px;font-size:420px;color:#e8e
 
 <!-- footer -->
 <footer>
-  <span class="ghost" aria-hidden="true">⚡</span>
+  <svg class="ghost" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8e8e8" d="M13.5 2 4 13.5h6L9.5 22 20 10h-6.7z"/></svg>
   <div class="wrap">
+    <div class="flogo">
+      <a class="logo" href="#">VELOX <svg class="bolt" viewBox="0 0 24 24" width="15" height="19" aria-hidden="true"><path fill="#de362a" d="M13.5 2 4 13.5h6L9.5 22 20 10h-6.7z"/></svg> THEMES</a>
+    </div>
     <div class="fgrid">
-      <div class="fcol">
-        <a class="logo" href="#">VELOX <span class="bolt">⚡</span> THEMES</a>
-      </div>
       <div class="fcol">
         <h5>/Links</h5>
         <a href="#">Home</a><a href="#">Write a review</a><a href="#">Testimonials</a><a href="#">Affiliate program (30%)</a><a href="#">Roadmap</a><a href="#">Our pledge</a>

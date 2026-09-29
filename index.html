@@ -307,7 +307,7 @@ footer .ghost{position:absolute;right:-40px;top:-30px;width:340px;height:440px;o
 .modal .x{position:absolute;top:14px;right:18px;background:none;border:0;font-size:24px;cursor:pointer;color:var(--muted)}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .4s ease,transform .4s ease}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
@@ -727,8 +727,8 @@ footer .ghost{position:absolute;right:-40px;top:-30px;width:340px;height:440px;o
       </div>
     </div>
     <div class="fbot">
-      <div class="socials"><a href="#">𝕏</a><a href="#">@</a><a href="#">◉</a><a href="#">in</a></div>
-      <div class="copy">© Velox Themes. All rights reserved.</div>
+      <div class="socials"><a href="#" aria-label="X">𝕏</a><a href="#" aria-label="Threads">@</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a></div>
+      <div class="copy">©2026 Velox Themes. All rights reserved.</div>
     </div>
   </div>
 </footer>
@@ -770,6 +770,9 @@ acc.addEventListener('click', e => {
   const row = b.parentElement, ans = row.querySelector('.ans'), open = row.classList.toggle('open');
   ans.style.maxHeight = open ? ans.scrollHeight + 'px' : 0;
 });
+
+// ---- capture stabilization: ?static=1 menampilkan semua reveal tanpa transisi (dipakai screenshot verifikasi; log di evidence) ----
+if (location.search.includes('static')) document.querySelectorAll('.rv').forEach(e => e.classList.add('in'));
 
 // ---- nav shadow ----
 const nav = document.getElementById('nav');

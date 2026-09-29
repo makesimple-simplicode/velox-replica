@@ -106,15 +106,15 @@ h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.05}
 
 /* ============ hours ============ */
 .hours{max-width:760px;margin:110px auto 0;text-align:center}
-.hours h2{font-size:clamp(30px,4vw,46px)}
+.hours h2{font-size:clamp(30px,4vw,46px);max-width:640px;margin:0 auto}
 .hours ul{list-style:none;margin-top:44px;display:flex;flex-direction:column;gap:12px}
-.hours li{background:var(--light);border-radius:10px;padding:14px 20px;font-size:16.5px}
-.hours li:nth-child(odd){background:#fff;border:1px solid var(--line)}
+.hours li{background:rgba(222,54,42,.06);border-radius:10px;padding:14px 20px;font-size:16.5px}
+.hours li:nth-child(odd){background:#fff}
 .hours li b{font-weight:700;margin-right:6px}
 .hours .sum{font-size:26px;font-weight:700;margin-top:34px}
 
 /* ============ build faster ============ */
-.strip{background:var(--light);text-align:center;padding:16px;font-weight:700;font-size:18px;margin-top:110px}
+.strip{background:rgba(222,54,42,.05);text-align:center;padding:16px;font-weight:700;font-size:18px;margin-top:110px}
 .bf{text-align:center;padding:80px 0 0}
 .bf h2{font-size:clamp(38px,5vw,64px);font-weight:800}
 .bf .sub{max-width:640px;margin:22px auto 0;color:var(--gray);font-size:16px;line-height:1.6}
@@ -275,6 +275,7 @@ h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.05}
 
 /* ============ cta ============ */
 .cta{background:#000;color:#fff;text-align:center;padding:120px 20px;margin-top:120px}
+.cta-arc{width:120px;height:24px;display:block;margin:0 auto 18px}
 .cta h2{font-size:clamp(34px,5vw,64px);font-weight:800}
 .cta h2 .r{color:var(--red);display:block}
 .cta .btn{margin-top:44px;background:#1a1a1a}
@@ -693,6 +694,7 @@ footer .ghost{position:absolute;right:-40px;top:-30px;width:340px;height:440px;o
 
 <!-- cta -->
 <section class="cta">
+  <svg class="cta-arc" viewBox="0 0 120 24" aria-hidden="true"><path d="M4 20 C 30 2, 90 2, 116 20" stroke="#de362a" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
   <h2 class="rv">Your next client is waiting!<span class="r">Is your website ready?</span></h2>
   <button class="btn rv" id="quizBtn">Launch your website today <span class="ar">↗</span></button>
 </section>

@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🐴 Client Winning Framer Templates for Agencies — Velox Themes (replica)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0a; --black:#000; --muted:#a0a0a0; --gray:#5e5e5e; --red:#de362a; --red-dark:#961e15;
+  --light:#f1f1f1; --line:#e3e3e3; --white:#fff;
+  --page:40px; --radius:16px;
+  --font:"Geist","Geist Placeholder",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--page)}
+h1,h2,h3{font-weight:700;letter-spacing:-.03em;line-height:1.05}
+.dot{color:var(--red)}
+.mono{font-family:"Fragment Mono",monospace;font-size:13px;color:var(--muted)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font:600 15px/1 var(--font);
+  padding:14px 22px;border-radius:8px;border:0;cursor:pointer;transition:background .3s ease,transform .3s ease}
+.btn:hover{background:#2a2a2a;transform:translateY(-2px)}
+.btn .ar{transition:transform .3s ease}
+.btn:hover .ar{transform:translate(2px,-2px)}
+.btn-o{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);font:600 15px/1 var(--font);
+  padding:13px 22px;border-radius:999px;border:1px solid var(--line);cursor:pointer;transition:border-color .3s,color .3s}
+.btn-o:hover{border-color:var(--ink)}
+.btn-o .ar{color:var(--red)}
+.link-r{display:inline-flex;align-items:center;gap:6px;color:var(--red);font-weight:600;font-size:15px;transition:color .4s cubic-bezier(.44,0,.56,1)}
+.link-r:hover{color:var(--red-dark)}
+
+/* ============ ticker ============ */
+.ticker{background:var(--red);color:#fff;font-size:13px;font-weight:600;height:34px;display:flex;align-items:center;overflow:hidden}
+.ticker-track{display:flex;gap:48px;white-space:nowrap;animation:tick 28s linear infinite;padding-left:100%}
+.ticker-track span{display:inline-flex;gap:8px;align-items:center}
+.ticker .jbtn{background:var(--ink);color:#fff;border-radius:4px;padding:3px 10px;font-size:12px}
+@keyframes tick{to{transform:translateX(-100%)}}
+
+/* ============ nav ============ */
+.nav{position:fixed;top:34px;left:0;right:0;background:#fff;z-index:60;border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-color:var(--line)}
+.nav-in{max-width:1440px;margin:0 auto;padding:0 var(--page);height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:17px;letter-spacing:-.02em}
+.logo .bolt{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500}
+.nav-links a{transition:color .4s cubic-bezier(.44,0,.56,1);display:flex;gap:4px;align-items:center}
+.nav-links a:hover{color:var(--muted)}
+.nav-cta{background:var(--ink);color:#fff;padding:11px 18px;border-radius:6px;font-weight:600;font-size:14px;transition:background .3s}
+.nav-cta:hover{background:#2a2a2a}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:22px;height:2px;background:var(--ink);display:block}
+
+/* ============ hero ============ */
+.hero{padding:170px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.9fr 1fr;gap:60px;align-items:start}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:600}
+.hero h1{font-size:clamp(44px,5.4vw,76px);font-weight:800;letter-spacing:-.04em;margin-top:28px}
+.hero h1 .line{position:relative;display:inline-flex;align-items:center;gap:16px}
+.hero h1 .line::after{content:"";height:3px;background:var(--red);flex:1;min-width:60px}
+.checks{display:flex;gap:24px;margin-top:32px;font-size:14px;font-weight:600;flex-wrap:wrap}
+.checks span::before{content:"✓";color:var(--red);margin-right:7px}
+.hero-right p{font-size:16px;line-height:1.6;color:var(--ink);max-width:340px}
+.hero-right .btn{margin-top:26px}
+.social{display:flex;align-items:center;gap:12px;margin-top:26px}
+.avs{display:flex}
+.avs img{width:44px;height:44px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-12px;background:#eee}
+.avs img:first-child{margin-left:0}
+.social .rate{font-size:13px;font-weight:500}
+.social .rate b{display:block}
+.social .star{color:#f5b301}
+
+/* ============ featured ============ */
+.panel{background:var(--light);border-radius:24px;padding:48px 40px;margin-top:60px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.panel-head h2{font-size:clamp(26px,3vw,38px)}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.tcard{display:block;transition:transform .35s ease}
+.tcard .shot{border-radius:12px;overflow:hidden;aspect-ratio:16/11;background:#ddd}
+.tcard .shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.tcard:hover{transform:translateY(-6px)}
+.tcard:hover .shot img{transform:scale(1.05)}
+.trow{display:flex;align-items:center;gap:10px;margin-top:16px}
+.trow h3{font-size:18px;font-weight:700}
+.trow .price{margin-left:auto;font-weight:700;font-size:17px}
+.tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:6px;background:#fff;border:1px solid var(--ink)}
+.tag.red{background:var(--red);border-color:var(--red);color:#fff}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:var(--gray)}
+.tags span+span::before{content:"• ";color:var(--muted)}
+
+/* ============ 3d component ============ */
+.comp{max-width:1000px;margin:90px auto 0;background:var(--light);border-radius:24px;padding:32px;
+  display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.carousel3d{background:#000;border-radius:12px;height:280px;overflow:hidden;position:relative;perspective:900px}
+.carousel3d .lane{position:absolute;top:50%;left:0;display:flex;gap:18px;animation:spin3d 18s linear infinite;transform-style:preserve-3d}
+.carousel3d .lane img{width:170px;height:230px;object-fit:cover;border-radius:8px;transform:rotateY(-18deg)}
+@keyframes spin3d{from{transform:translateY(-50%) translateX(0)}to{transform:translateY(-50%) translateX(-50%)}}
+.comp-info h3{font-size:30px}
+.comp-info .p{font-size:22px;color:#777;margin-top:6px}
+.chip{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;margin-top:16px}
+
+/* ============ hours ============ */
+.hours{max-width:760px;margin:110px auto 0;text-align:center}
+.hours h2{font-size:clamp(30px,4vw,46px)}
+.hours ul{list-style:none;margin-top:44px;display:flex;flex-direction:column;gap:12px}
+.hours li{background:var(--light);border-radius:10px;padding:14px 20px;font-size:16.5px}
+.hours li:nth-child(odd){background:#fff;border:1px solid var(--line)}
+.hours li b{font-weight:700;margin-right:6px}
+.hours .sum{font-size:26px;font-weight:700;margin-top:34px}
+
+/* ============ build faster ============ */
+.strip{background:var(--light);text-align:center;padding:16px;font-weight:700;font-size:18px;margin-top:110px}
+.bf{text-align:center;padding:80px 0 0}
+.bf h2{font-size:clamp(38px,5vw,64px);font-weight:800}
+.bf .sub{max-width:640px;margin:22px auto 0;color:var(--gray);font-size:16px;line-height:1.6}
+.editor{max-width:1200px;margin:56px auto 0;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.18);background:#121212}
+.ed-bar{display:flex;align-items:center;gap:14px;background:#121212;padding:10px 16px;color:#bbb;font-size:12.5px}
+.ed-bar .name{color:#fff;font-weight:600}
+.ed-bar .pub{margin-left:auto;background:#09f;color:#fff;padding:6px 14px;border-radius:6px;font-weight:600}
+.ed-sub{display:flex;gap:14px;background:#181818;padding:8px 16px;color:#888;font-size:12.5px}
+.ed-video{background:#111;position:relative}
+.ed-video video{width:100%;display:block}
+
+/* ============ zigzag ============ */
+.zig{display:grid;gap:70px;padding:110px 0 0}
+.zrow{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.zrow h3{font-size:clamp(30px,3.6vw,46px)}
+.zrow p{color:var(--gray);font-size:16px;line-height:1.65;margin-top:18px;max-width:480px}
+.zrow .btn-o{margin-top:26px}
+.compare{background:var(--light);border-radius:var(--radius);padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:24px;text-align:center}
+.compare .big{font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.03em}
+.compare .big.r{color:var(--red)}
+.compare .cap{color:var(--gray);font-size:14px;margin-top:6px}
+.compare .lb{margin-top:18px;display:inline-flex;gap:6px;align-items:center;font-weight:700;font-size:15px;padding:12px 20px;border-radius:8px}
+.compare .lb.b{background:var(--ink);color:#fff}
+.compare .lb.r{background:var(--red);color:#fff}
+.zmedia{background:var(--light);border-radius:var(--radius);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.zmedia img{width:100%;height:100%;object-fit:cover}
+
+/* ============ testimonials ============ */
+.tst{padding:120px 0 0;text-align:center}
+.tst .q{color:var(--red);font-size:40px;line-height:1}
+.tst h2{font-size:clamp(32px,4vw,52px);margin-top:8px}
+.tst .sub{color:var(--gray);font-size:15px;margin-top:14px}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#000;border-radius:20px;overflow:hidden;margin-top:54px;text-align:left}
+.feature .body{padding:44px}
+.stars{color:var(--red);letter-spacing:3px;font-size:15px}
+.feature blockquote{color:#fff;font-size:clamp(20px,2vw,26px);font-weight:700;line-height:1.3;margin-top:20px;letter-spacing:-.02em}
+.feature .who{border-top:1px solid #333;margin-top:26px;padding-top:20px}
+.feature .who b{color:#fff;display:block}
+.feature .who span{color:var(--red);font-size:13px}
+.badges{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.pbadge{background:#fff;border-radius:10px;padding:8px 12px;display:flex;gap:10px;align-items:center;font-size:12px}
+.pbadge img{width:38px;height:38px;border-radius:6px;object-fit:cover}
+.pbadge .ck{color:var(--gray)}
+.pbadge b{display:block;font-size:13px}
+.feature .thumb{position:relative;background:#222}
+.feature .thumb img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:rgba(120,120,120,.55);
+  border:0;cursor:pointer;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s}
+.play:hover{transform:scale(1.1);background:rgba(160,160,160,.7)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;text-align:left}
+.tsm{background:var(--light);border-radius:16px;padding:30px}
+.tsm h4{font-size:20px;margin-top:14px;letter-spacing:-.02em;line-height:1.25}
+.tsm p{color:var(--gray);font-size:14.5px;line-height:1.6;margin-top:12px}
+.tsm .foot{display:flex;align-items:center;gap:10px;margin-top:22px;justify-content:space-between}
+.tsm .au{display:flex;gap:10px;align-items:center;font-weight:700;font-size:14px}
+.tsm .au img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.center{text-align:center;margin-top:36px}
+
+/* ============ showcase ============ */
+.sho{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:center;padding:120px 0 0}
+.sho h2{font-size:clamp(32px,4vw,52px)}
+.sho p{color:var(--gray);font-size:16px;line-height:1.6;margin-top:18px;max-width:420px}
+.sho .btn-o{margin-top:26px}
+.sho-card{background:#fff;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.12);overflow:hidden}
+.sho-card .prev{aspect-ratio:16/9;background:#111;position:relative}
+.sho-card .prev img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0;transition:opacity .5s}
+.sho-card .prev img.on{opacity:1}
+.sho-ctl{display:flex;align-items:center;gap:14px;padding:18px 22px}
+.arrow{width:38px;height:38px;border-radius:50%;background:var(--light);border:0;cursor:pointer;font-size:15px;transition:background .3s}
+.arrow:hover{background:var(--line)}
+.sho-ctl .site{font-weight:700;font-size:15px}
+.sho-ctl .site a{color:var(--red);font-weight:600;font-size:13.5px;display:block}
+.sho-ctl .used{margin-left:auto;text-align:right;font-size:13px}
+.sho-ctl .used b{font-size:14px}
+
+/* ============ loved / marquee black ============ */
+.loved{background:#000;color:#fff;border-radius:0;margin-top:120px;padding:100px 0}
+.loved h2{text-align:center;font-size:clamp(32px,4.4vw,56px)}
+.loved h2 .r{color:var(--red)}
+.marquee{overflow:hidden;margin-top:56px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mtrack{display:flex;gap:22px;width:max-content;animation:mv 40s linear infinite}
+.mtrack:hover{animation-play-state:paused}
+@keyframes mv{to{transform:translateX(-50%)}}
+.vcard{position:relative;width:260px;aspect-ratio:9/14;border-radius:14px;overflow:hidden;background:#222;flex:none}
+.vcard img,.vcard video{width:100%;height:100%;object-fit:cover}
+.vcard .play{width:44px;height:44px;font-size:14px}
+
+/* ============ built for agencies ============ */
+.bfa{padding:120px 0 0;text-align:center}
+.bfa h2{font-size:clamp(32px,4.4vw,56px)}
+.bfa .cards3{margin-top:56px;text-align:left}
+.bcard{background:var(--light);border-radius:var(--radius);padding:32px;transition:transform .35s}
+.bcard:hover{transform:translateY(-6px)}
+.bcard .num{font-family:"Fragment Mono",monospace;font-weight:700;font-size:15px}
+.bcard .num i{color:var(--red);font-style:normal}
+.bcard .art{margin:22px 0;background:#fff;border-radius:12px;height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.bcard .art img{width:86%;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.16);transform:rotate(-3deg)}
+.bcard .art img:nth-child(2){transform:rotate(4deg) translate(-30%,10%);position:absolute}
+.bcard h3{font-size:24px}
+.bcard p{color:var(--gray);font-size:15px;line-height:1.6;margin-top:12px}
+
+/* ============ faq ============ */
+.faq{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;padding:120px 0 0}
+.faq h2{font-size:clamp(34px,4vw,54px)}
+.faq .sub{color:var(--muted);margin-top:14px;font-size:15px}
+.acc{display:flex;flex-direction:column;gap:14px}
+.qrow{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.qrow button{width:100%;display:flex;justify-content:space-between;gap:20px;align-items:center;background:none;border:0;
+  padding:20px 24px;font:600 16.5px/1.4 var(--font);color:var(--ink);cursor:pointer;text-align:left}
+.qrow .pm{color:var(--red);font-size:22px;font-weight:400;transition:transform .3s}
+.qrow.open .pm{transform:rotate(45deg)}
+.qrow .ans{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.qrow .ans p{padding:0 24px 22px;color:var(--gray);font-size:15px;line-height:1.65}
+.qrow .ans a{color:var(--red);font-weight:600}
+
+/* ============ who we are ============ */
+.who-sec{background:#000;color:#fff;margin-top:130px;padding:100px 0 90px;text-align:center}
+.who-sec h2{font-size:clamp(34px,4vw,54px)}
+.story{background:#fff;color:var(--ink);border-radius:16px;max-width:640px;margin:44px auto 0;padding:40px;text-align:left;
+  box-shadow:0 30px 60px rgba(0,0,0,.5);position:relative}
+.story p{font-size:15.5px;line-height:1.7;margin-bottom:14px}
+.story .bolt{position:absolute;right:24px;bottom:18px;color:var(--red);font-size:22px}
+.hand{max-width:420px;margin:-30px auto 0;filter:grayscale(1) contrast(1.1);mix-blend-mode:screen;opacity:.9}
+.team{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:40px;align-items:center;margin-top:70px}
+.team .tm img{width:100%;max-width:250px;margin:0 auto;border-radius:14px;filter:grayscale(1) contrast(1.15)}
+.team .tm b{display:block;margin-top:18px;font-size:17px}
+.team .tm span{color:var(--muted);font-size:13.5px}
+.team .tm .x{display:inline-flex;margin-top:12px;border:1px solid #444;border-radius:6px;padding:6px 10px;font-size:13px;color:#fff}
+.team h3{font-size:clamp(26px,3vw,38px);line-height:1.2}
+.team h3 .r{color:var(--red)}
+
+/* ============ pledge + gram ============ */
+.pledge{display:grid;grid-template-columns:1fr 1fr;gap:50px;padding:120px 0 0;align-items:start}
+.pledge h2{font-size:clamp(30px,3.6vw,48px)}
+.pledge .photo{margin-top:30px;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10}
+.pledge .photo img{width:100%;height:100%;object-fit:cover}
+.pcard{background:var(--light);border:1px solid var(--line);border-radius:var(--radius);padding:36px}
+.pcard .p1{font-weight:800;font-size:24px;letter-spacing:-.03em}
+.pcard p{color:var(--gray);font-size:15px;line-height:1.65;margin-top:18px}
+.pcard a.in{color:var(--red);font-weight:700}
+.gram{padding:110px 0 0;text-align:center}
+.gram h2{font-size:clamp(30px,3.6vw,48px)}
+.gram .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.gtile{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:9/14;background:#eee}
+.gtile img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gtile:hover img{transform:scale(1.05)}
+
+/* ============ articles ============ */
+.art-sec{padding:120px 0 0;text-align:center}
+.art-sec h2{font-size:clamp(32px,4vw,52px)}
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:52px;text-align:left}
+.acard .im{aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--light)}
+.acard .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.acard:hover .im img{transform:scale(1.05)}
+.pilltag{display:inline-block;background:var(--light);border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:600;margin-top:18px}
+.acard h4{font-size:21px;margin-top:14px;letter-spacing:-.02em;line-height:1.3}
+.acard .meta{color:var(--gray);font-size:13.5px;margin-top:10px}
+
+/* ============ cta ============ */
+.cta{background:#000;color:#fff;text-align:center;padding:120px 20px;margin-top:120px}
+.cta h2{font-size:clamp(34px,5vw,64px);font-weight:800}
+.cta h2 .r{color:var(--red);display:block}
+.cta .btn{margin-top:44px;background:#1a1a1a}
+.cta .btn:hover{background:#2c2c2c}
+
+/* ============ footer ============ */
+footer{background:#f7f7f7;padding:70px 0 34px;position:relative;overflow:hidden}
+footer .ghost{position:absolute;right:-60px;top:-40px;font-size:420px;color:#e8e8e8;opacity:.5;line-height:1;pointer-events:none;font-weight:800}
+.fgrid{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:36px;position:relative}
+.fcol h5{font-family:"Fragment Mono",monospace;font-weight:400;font-size:13px;color:var(--muted);margin-bottom:16px}
+.fcol a{display:block;font-size:15px;font-weight:600;padding:5px 0;transition:color .4s cubic-bezier(.44,0,.56,1)}
+.fcol a:hover{color:var(--red)}
+.fcol+.fcol-group{margin-top:26px}
+.fbot{display:flex;justify-content:space-between;align-items:center;margin-top:56px;position:relative;flex-wrap:wrap;gap:16px}
+.socials{display:flex;gap:10px}
+.socials a{width:38px;height:38px;border:1px solid var(--line);background:#eee;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;transition:background .3s}
+.socials a:hover{background:#e0e0e0}
+.copy{font-size:13px;color:var(--ink)}
+
+/* ============ quiz modal ============ */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.on{display:flex}
+.modal .box{background:#fff;border-radius:20px;max-width:520px;width:100%;padding:44px 40px;text-align:center;position:relative}
+.modal h3{font-size:30px}
+.modal h3 .r{color:var(--red)}
+.modal p{color:var(--gray);margin-top:14px;font-size:15px;line-height:1.6}
+.modal .btn{margin-top:26px}
+.modal .no{display:block;margin-top:18px;font-size:13px;color:var(--muted);background:none;border:0;cursor:pointer;width:100%}
+.modal .x{position:absolute;top:14px;right:18px;background:none;border:0;font-size:24px;cursor:pointer;color:var(--muted)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ticker-track,.mtrack,.carousel3d .lane{animation:none}
+}
+
+/* ============ responsive ============ */
+@media (max-width:1199px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:clamp(40px,7vw,60px)}
+  .cards3{grid-template-columns:1fr 1fr}
+  .comp{grid-template-columns:1fr}
+  .zrow,.sho,.faq,.pledge,.feature{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr;text-align:center}
+  .arts{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media (max-width:809px){
+  :root{--page:20px}
+  .cards3,.grid2,.gram .g3,.arts{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .panel{padding:32px 20px}
+  .hero{padding:130px 0 50px}
+  .feature .body{padding:28px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .nav-cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>📣 Post Reels, <b>Get a FREE Premium Template</b> <a class="jbtn" href="#">How to join ↗</a></span>
+    <span>⚡ Templates from $99 — ship in days</span>
+    <span>📣 Post Reels, <b>Get a FREE Premium Template</b> <a class="jbtn" href="#">How to join ↗</a></span>
+    <span>⚡ Templates from $99 — ship in days</span>
+  </div>
+</div>
+
+<!-- nav -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#">VELOX <span class="bolt">⚡</span> THEMES</a>
+    <nav class="nav-links">
+      <a href="#templates">Templates ▾</a>
+      <a href="#faq">Resources ▾</a>
+      <a href="#components">Components</a>
+      <a href="#showcase">Showcase</a>
+      <a class="nav-cta" href="#">Get All Access ↗</a>
+    </nav>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <span class="pill">⬛ Premium Framer Templates</span>
+      <h1>
+        <span class="line">Client winning</span><br>
+        Framer templates<br>
+        for agencies<span class="dot">.</span>
+      </h1>
+      <div class="checks"><span>No code required</span><span>Fast support</span><span>Ship faster</span></div>
+    </div>
+    <div class="hero-right">
+      <p>Framer templates built to help you launch faster, impress clients, and ship beautiful non-boring websites. No code needed</p>
+      <a class="btn" href="#templates">Browse templates <span class="ar">↗</span></a>
+      <div class="social">
+        <div class="avs">
+          <img src="https://framerusercontent.com/images/hRiDQx7kwQhM6Evh6TRFrxLAlBg.png?width=416&height=416" alt="Mark">
+          <img src="https://framerusercontent.com/images/yOHSGb16ZdQtKs6BjEI3L1dImE.png?width=800&height=800" alt="Peter">
+          <img src="https://framerusercontent.com/images/ELV0cjxxi6A2pcwDV5ic5gtzWzw.png?width=960&height=1176" alt="Ahmed">
+          <img src="https://framerusercontent.com/images/JCkMdRFGHe80UN5ivsJNnK6hliI.png?width=151&height=150" alt="Malik">
+          <img src="https://framerusercontent.com/images/lH4VODCVPW4RRAFykbELkn3oSbQ.png?width=151&height=150" alt="Elias">
+        </div>
+        <div class="rate"><span class="star">★</span> <b>5.0</b> Loved by 1954+ agencies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- featured -->
+<section class="wrap" id="templates">
+  <div class="panel rv">
+    <div class="panel-head">
+      <h2>Featured templates</h2>
+      <a class="link-r" href="#">Browse all ↗</a>
+    </div>
+    <div class="cards3">
+      <a class="tcard" href="#">
+        <div class="shot"><img src="https://framerusercontent.com/images/8oG8QkUCAGLtyyKL0M7nUe233mk.jpg?width=1600&height=1201" alt="Yudhistira"></div>
+        <div class="trow"><h3>Yudhistira</h3><span class="tag red">New</span><span class="price">$129</span></div>
+        <div class="tags"><span>AI</span><span>AI Agency</span><span>Agency</span></div>
+      </a>
+      <a class="tcard" href="#">
+        <div class="shot"><img src="https://framerusercontent.com/images/0XTNiy5pFxzeTQmAgdosOcqXQ8.jpg?width=1600&height=1201" alt="Sanjaya"></div>
+        <div class="trow"><h3>Sanjaya</h3><span class="tag">Popular</span><span class="price">$129</span></div>
+        <div class="tags"><span>AI</span><span>SaaS</span><span>AI Agency</span><span>Agency</span></div>
+      </a>
+      <a class="tcard" href="#">
+        <div class="shot"><img src="https://framerusercontent.com/images/9Am4C0nkfcY3mStQeA6G0EUBo.jpg?width=1600&height=1201" alt="Nakula"></div>
+        <div class="trow"><h3>Nakula</h3><span class="tag">Best seller</span><span class="price">$129</span></div>
+        <div class="tags"><span>Portfolio</span><span>Agency</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- component -->
+<section class="wrap" id="components">
+  <div class="comp rv">
+    <div class="carousel3d">
+      <div class="lane">
+        <img src="https://framerusercontent.com/images/QexhIvO1yH58q23q07pmvSBfXZs.png?width=1449&height=840" alt="">
+        <img src="https://framerusercontent.com/images/vyv0Pl53a5B0WzuT2nccz8RCOo.png?width=1449&height=840" alt="">
+        <img src="https://framerusercontent.com/images/ZXz95a1pJ5P6pAfH1JNlj6UL8JI.png?width=1449&height=841" alt="">
+        <img src="https://framerusercontent.com/images/QexhIvO1yH58q23q07pmvSBfXZs.png?width=1449&height=840" alt="">
+        <img src="https://framerusercontent.com/images/vyv0Pl53a5B0WzuT2nccz8RCOo.png?width=1449&height=840" alt="">
+        <img src="https://framerusercontent.com/images/ZXz95a1pJ5P6pAfH1JNlj6UL8JI.png?width=1449&height=841" alt="">
+      </div>
+    </div>
+    <div class="comp-info">
+      <h3>3D Animated Carousel</h3>
+      <div class="p">$19</div>
+      <span class="chip">⬛ Framer Component</span>
+    </div>
+  </div>
+</section>
+
+<!-- hours -->
+<section class="hours wrap rv">
+  <h2>We get it, building a website can be challenging<span class="dot">.</span></h2>
+  <ul>
+    <li><b>4hrs</b> guessing what your client wants</li>
+    <li><b>2hrs</b> scrolling for inspiration</li>
+    <li><b>2 weeks</b> stuck in design and revisions</li>
+    <li><b>Another 2 weeks</b> dev time</li>
+    <li><b>1 week</b> lost because the client changed the brief</li>
+    <li><b>3hrs</b> fixing spacing and layout</li>
+    <li><b>4hrs</b> trying to make site with AI (but it flopped)</li>
+    <li><b>0 hrs</b> left to find your next client</li>
+    <li><b>∞ hrs</b> overthinking everything</li>
+  </ul>
+  <div class="sum">=Way too much time and money <span class="dot">wasted</span></div>
+</section>
+
+<!-- build faster -->
+<div class="strip">or..just grab our website template and launch in days<span class="dot">!</span></div>
+<section class="bf wrap">
+  <h2 class="rv">Build faster, earn more<span class="dot">!</span></h2>
+  <p class="sub rv">Our premium Webflow &amp; Framer templates handle 80% of the heavy load! Now with Framer's AI Agent, customizing them is easier than ever.</p>
+  <div class="editor rv">
+    <div class="ed-bar"><span class="name">Rama (copy)</span><span>⎇ main</span><span class="pub">Publish</span></div>
+    <div class="ed-sub"><span>▶ Desktop 1200</span><span>+</span></div>
+    <div class="ed-video">
+      <video muted loop playsinline autoplay poster="https://framerusercontent.com/images/fwp5C4sXkJHUUEsK2maInMiOtE.jpg?width=1600&height=1200"
+        src="https://offload-assets.framercoder.com/313704c7-938a-4269-b239-b3d7d3e9bb3c/3ae3be67-4058-40ce-96b3-50e70a5f305a_Rama%20Edit(full).mp4"></video>
+    </div>
+  </div>
+</section>
+
+<!-- zigzag -->
+<section class="zig wrap">
+  <div class="zrow rv">
+    <div class="compare">
+      <div>
+        <div class="big">$5K++</div>
+        <div class="cap">weeks to live</div>
+        <span class="lb b">Custom build</span>
+      </div>
+      <div>
+        <div class="big r">$99-$129</div>
+        <div class="cap">days to live</div>
+        <span class="lb r">VELOX ⚡ THEMES</span>
+      </div>
+    </div>
+    <div>
+      <h3>Save your time for clients, not tasks that don't pay<span class="dot">.</span></h3>
+      <p>Building a site from scratch eats weeks and thousands in dev costs time you could be billing to clients instead. Start from a $99-$129 template and keep your hours where they count.</p>
+      <a class="btn-o" href="#">Calculate website cost <span class="ar">↗</span></a>
+    </div>
+  </div>
+  <div class="zrow rv">
+    <div>
+      <h3>Fast support when you need help<span class="dot">.</span></h3>
+      <p>Count on us when you need help. We typically respond in under 24 hours, keeping everything smooth so your build stays on track.</p>
+    </div>
+    <div class="zmedia"><img src="https://framerusercontent.com/images/PWai7EJaJkfehhMyqKoNZApdY.png?width=173&height=166" alt="support" style="width:auto;height:auto;object-fit:contain;max-height:100%;padding:30px"></div>
+  </div>
+</section>
+
+<!-- testimonials -->
+<section class="tst wrap">
+  <div class="q rv">❝</div>
+  <h2 class="rv">What our customers say<span class="dot">.</span></h2>
+  <p class="sub rv">We helped agencies like you ship fast and be more efficient</p>
+
+  <div class="feature rv">
+    <div class="body">
+      <div class="stars">★★★★★</div>
+      <blockquote>Before Velox themes, I struggled to find high-quality, intuitive themes with seamless animations...</blockquote>
+      <div class="who"><b>Ahmed Toumi</b><span>Brandable</span></div>
+      <div class="badges">
+        <span class="pbadge"><img src="https://framerusercontent.com/images/9Am4C0nkfcY3mStQeA6G0EUBo.jpg?width=1600&height=1201" alt=""><span><span class="ck">✓ Purchased</span><b>Nakula</b></span></span>
+        <span class="pbadge"><img src="https://framerusercontent.com/images/Vcxs6dPqGTypRCkVwfBWJNHEM.jpg?width=1600&height=1201" alt=""><span><span class="ck">✓ Purchased</span><b>Bima</b></span></span>
+      </div>
+    </div>
+    <div class="thumb">
+      <img src="https://framerusercontent.com/images/IOQzokzZWRAWwF0Odxocp25f9iE.jpg?width=1223&height=974" alt="Ahmed video">
+      <button class="play" aria-label="Play">▶</button>
+    </div>
+  </div>
+
+  <div class="grid2 rv">
+    <div class="tsm">
+      <div class="stars">★★★★★</div>
+      <h4>We have cut our production time for our customers by 50%</h4>
+      <p>Really great work from the team @Velox, we have cut our production time for our customers by 50% due to the high standard of work!</p>
+      <div class="foot">
+        <span class="au"><img src="https://framerusercontent.com/images/rVIJOnwlEjAKMdj4SYHj34DLpc.png?width=800&height=800" alt="">Peter Grisel</span>
+        <span class="pbadge"><img src="https://framerusercontent.com/images/9Am4C0nkfcY3mStQeA6G0EUBo.jpg?width=1600&height=1201" alt=""><span><span class="ck">✓ Purchased</span><b>Nakula</b></span></span>
+      </div>
+    </div>
+    <div class="tsm">
+      <div class="stars">★★★★★</div>
+      <h4>Clean layout, everything worked first time, and it saved me a lot of time.</h4>
+      <p>I used Mandala for my site and didn't need to tweak much, it looked solid straight away. Super responsive too, which made the whole process even smoother.</p>
+      <div class="foot">
+        <span class="au"><img src="https://framerusercontent.com/images/VRiWaTzVcDOw2gOCh2Uqjjq4M.jpg?width=338&height=338" alt="">Elias Hussen</span>
+        <span class="pbadge"><img src="https://framerusercontent.com/images/d49QZ8gOu2cdtNXJmYpW2wrCSI.jpg?width=1600&height=1201" alt=""><span><span class="ck">✓ Purchased</span><b>Mandala</b></span></span>
+      </div>
+    </div>
+  </div>
+  <div class="center"><a class="btn-o" href="#">Read more reviews <span class="ar">↗</span></a></div>
+</section>
+
+<!-- showcase -->
+<section class="sho wrap" id="showcase">
+  <div class="rv">
+    <h2>What our customers built<span class="dot">.</span></h2>
+    <p>Every business that uses our templates makes it look completely their own. Here's what they built, not us.</p>
+    <a class="btn-o" href="#">See more showcase <span class="ar">↗</span></a>
+  </div>
+  <div class="sho-card rv">
+    <div class="prev">
+      <img class="on" data-i="0" src="https://framerusercontent.com/images/oNYL19YwwbdubjA0KVIQyzbsI.png?scale-down-to=2048&width=2986&height=1708" alt="LogicFox">
+      <img data-i="1" src="https://framerusercontent.com/images/05t85hT5iHcqeOnDnSEPBAQgMpU.png?scale-down-to=2048&width=3016&height=1720" alt="Sadewa">
+    </div>
+    <div class="sho-ctl">
+      <button class="arrow" id="shoPrev">←</button>
+      <button class="arrow" id="shoNext">→</button>
+      <span class="site" id="shoName">LogicFox<a href="#">View live site ↗</a></span>
+      <span class="used">Template used:<b id="shoTpl">Sadewa</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- loved marquee -->
+<section class="loved">
+  <div class="wrap"><h2><span class="r">Loved by creatives</span><br>all over the world.</h2></div>
+  <div class="marquee">
+    <div class="mtrack" id="mtrack">
+      <div class="vcard"><img src="https://framerusercontent.com/images/ELV0cjxxi6A2pcwDV5ic5gtzWzw.png?width=960&height=1176" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/VRiWaTzVcDOw2gOCh2Uqjjq4M.jpg?width=338&height=338" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/rVIJOnwlEjAKMdj4SYHj34DLpc.png?width=800&height=800" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/PWai7EJaJkfehhMyqKoNZApdY.png?width=173&height=166" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/hRiDQx7kwQhM6Evh6TRFrxLAlBg.png?width=416&height=416" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/yOHSGb16ZdQtKs6BjEI3L1dImE.png?width=800&height=800" alt=""><button class="play">▶</button></div>
+      <!-- duplicate for seamless loop -->
+      <div class="vcard"><img src="https://framerusercontent.com/images/ELV0cjxxi6A2pcwDV5ic5gtzWzw.png?width=960&height=1176" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/VRiWaTzVcDOw2gOCh2Uqjjq4M.jpg?width=338&height=338" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/rVIJOnwlEjAKMdj4SYHj34DLpc.png?width=800&height=800" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/PWai7EJaJkfehhMyqKoNZApdY.png?width=173&height=166" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/hRiDQx7kwQhM6Evh6TRFrxLAlBg.png?width=416&height=416" alt=""><button class="play">▶</button></div>
+      <div class="vcard"><img src="https://framerusercontent.com/images/yOHSGb16ZdQtKs6BjEI3L1dImE.png?width=800&height=800" alt=""><button class="play">▶</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- built for agencies -->
+<section class="bfa wrap">
+  <h2 class="rv">Built for agencies, not just designers<span class="dot">.</span></h2>
+  <div class="cards3">
+    <div class="bcard rv">
+      <div class="num"><i>/</i>01.</div>
+      <div class="art"><img src="https://framerusercontent.com/images/QexhIvO1yH58q23q07pmvSBfXZs.png?width=1449&height=840" alt=""></div>
+      <h3>1 license, unlimited clients</h3>
+      <p>One license, forever! Buy once and use it on every client project you take on. No re-purchasing, no per-site fees.</p>
+    </div>
+    <div class="bcard rv">
+      <div class="num"><i>/</i>02.</div>
+      <div class="art"><img src="https://framerusercontent.com/images/vyv0Pl53a5B0WzuT2nccz8RCOo.png?width=1449&height=840" alt=""></div>
+      <h3>Make it yours in days</h3>
+      <p>Customize colors, fonts, and content to match your client's brand. No code needed, no dev required.</p>
+    </div>
+    <div class="bcard rv">
+      <div class="num"><i>/</i>03.</div>
+      <div class="art"><img src="https://framerusercontent.com/images/d2NoUv6weUAEpF7qgaN6wkCkzss.png?width=1149&height=764" alt=""></div>
+      <h3>Ship &amp; get paid</h3>
+      <p>Launch your client's site fast, move on to the next project. More projects closed, more revenue for your agency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="faq wrap" id="faq">
+  <div class="rv">
+    <h2>FAQ<span class="dot">.</span></h2>
+    <p class="sub">All common questions about our templates</p>
+  </div>
+  <div class="acc rv" id="acc"></div>
+</section>
+
+<!-- who we are -->
+<section class="who-sec">
+  <div class="wrap">
+    <h2>Who we are<span class="dot">.</span></h2>
+    <div class="story">
+      <p><b>We started Velox Themes to solve a daily problem:</b></p>
+      <p>Clients not knowing what they want. We wasted too much time guessing.</p>
+      <p>Templates solved that. They helped us move faster, close more projects, and stop overthinking design.</p>
+      <p>But most website templates were too generic. So we made our own.</p>
+      <p>Gil designs. Bayu market. Together, we build fast, beautiful, and client-ready Webflow &amp; Framer templates to help people build great websites.</p>
+      <p><b>And we give back.</b> Every sale helps someone beyond the design world.</p>
+      <p>Velox Themes is just the beginning. We're building a digital product brand for creators like you.</p>
+      <span class="bolt">⚡</span>
+    </div>
+    <img class="hand" src="https://framerusercontent.com/images/x8W4yi25K65kTqTP8Ev8DYDPfw.png?scale-down-to=2048&width=2544&height=1593" alt="">
+    <div class="team">
+      <div class="tm rv">
+        <img src="https://framerusercontent.com/images/rXEda2AdN7grgu3xlO3GSJVB3A.png?width=640&height=640" alt="Bayu">
+        <b>Widya Bayu Wicaksono</b>
+        <span>Co-Founder &amp; Developer | Framer expert</span><br>
+        <span class="x">𝕏</span>
+      </div>
+      <h3>A team of two,<br><span class="r">crafting quality framer templates.</span></h3>
+      <div class="tm rv">
+        <img src="https://framerusercontent.com/images/uqPvHgrtjzPvvi9XGyzz9ZZIKg.png?width=1280&height=1280" alt="Gil">
+        <b>Gil Fadilana</b>
+        <span>Co-Founder &amp; Designer</span><br>
+        <span class="x">𝕏</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- pledge -->
+<section class="wrap">
+  <div class="pledge">
+    <div class="rv">
+      <h2>Our Pledge to give back<span class="dot">.</span></h2>
+      <div class="photo"><img src="https://framerusercontent.com/images/lrCavHRII98inww5QHPMPrDZfA.jpeg?scale-down-to=2048&width=2730&height=1536" alt="donation"></div>
+    </div>
+    <div class="pcard rv">
+      <div class="p1">Pledge<span style="color:var(--red)">1%</span></div>
+      <p>To make the world a little healthier and happier, we joined the Pledge 1% movement at <a class="in" href="#">pledge1percent.org</a>. With every purchase we give back 1% of our profit to an important cause.</p>
+      <a class="link-r" href="#" style="margin-top:20px">Learn more ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- gram -->
+<section class="gram wrap">
+  <h2 class="rv">Gram with us at @veloxthemes<span class="dot">!</span></h2>
+  <div class="g3">
+    <div class="gtile rv"><img src="https://framerusercontent.com/images/VYOeFPzE4buFCGlw1MNk6FD6kg.png?width=1424&height=2458" alt=""><button class="play">▶</button></div>
+    <div class="gtile rv"><img src="https://framerusercontent.com/images/EgB954rmaBnPdKgTYNuWNC4Gt0.png?width=1426&height=2456" alt=""><button class="play">▶</button></div>
+    <div class="gtile rv"><img src="https://framerusercontent.com/images/e9pEbSrPJHJYU6VWbuc3VXJlTNY.png?width=1422&height=2456" alt=""><button class="play">▶</button></div>
+  </div>
+</section>
+
+<!-- articles -->
+<section class="art-sec wrap">
+  <h2 class="rv">Popular article<span class="dot">.</span></h2>
+  <div class="arts">
+    <a class="acard rv" href="#">
+      <div class="im"><img src="https://framerusercontent.com/images/km3gKWVIXl03DgvOJGiSvjD27Jo.jpg?width=1800&height=945" alt=""></div>
+      <span class="pilltag">Comparison</span>
+      <h4>Framer vs Webflow 2026: Speed, Design, CMS &amp; Pricing Compared</h4>
+      <div class="meta">Jul 20, 2026 • 13 Mins Read</div>
+    </a>
+    <a class="acard rv" href="#">
+      <div class="im"><img src="https://framerusercontent.com/images/D77R7YZgOSZjb5AzaZyAeF1d8.jpg?width=1800&height=945" alt=""></div>
+      <span class="pilltag">Tips</span>
+      <h4>Framer Website Cost in 2026: Plans, Freelancer Rates &amp; Hidden Fees Explained</h4>
+      <div class="meta">Jul 22, 2026 • 8 Mins Read</div>
+    </a>
+    <a class="acard rv" href="#">
+      <div class="im"><img src="https://framerusercontent.com/images/kAXPi0fIreWmCtsjoAqvYDXgB2Q.jpg?scale-down-to=2048&width=2400&height=1260" alt=""></div>
+      <span class="pilltag">Inspiration</span>
+      <h4>Top 11 AI Automation Agency Framer Templates (Free &amp; Paid) 2026</h4>
+      <div class="meta">Mar 24, 2026 • 7 Mins Read</div>
+    </a>
+  </div>
+</section>
+
+<!-- cta -->
+<section class="cta">
+  <h2 class="rv">Your next client is waiting!<span class="r">Is your website ready?</span></h2>
+  <button class="btn rv" id="quizBtn">Launch your website today <span class="ar">↗</span></button>
+</section>
+
+<!-- footer -->
+<footer>
+  <span class="ghost" aria-hidden="true">⚡</span>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol">
+        <a class="logo" href="#">VELOX <span class="bolt">⚡</span> THEMES</a>
+      </div>
+      <div class="fcol">
+        <h5>/Links</h5>
+        <a href="#">Home</a><a href="#">Write a review</a><a href="#">Testimonials</a><a href="#">Affiliate program (30%)</a><a href="#">Roadmap</a><a href="#">Our pledge</a>
+      </div>
+      <div class="fcol">
+        <h5>/Templates</h5>
+        <a href="#">All templates</a><a href="#">Social Media templates</a><a href="#">Portfolio templates</a><a href="#">Ecommerce templates</a><a href="#">AI templates</a><a href="#">SaaS templates</a><a href="#">Startup templates</a><a href="#">AI Agency templates</a><a href="#">Agency templates</a>
+      </div>
+      <div class="fcol">
+        <h5>/Resources</h5>
+        <a href="#">Customer portal</a><a href="#">Support</a><a href="#">Blog</a>
+        <div class="fcol-group"><h5>/Templates for</h5>
+        <a href="#">Designers</a><a href="#">Agencies</a></div>
+      </div>
+      <div class="fcol">
+        <h5>/Free tools</h5>
+        <a href="#">Design style quiz</a><a href="#">Agency Gallery</a><a href="#">Website cost calculator</a>
+        <div class="fcol-group"><h5>/Legal</h5>
+        <a href="#">License</a><a href="#">Privacy policy</a><a href="#">Terms of use</a><a href="#">Refund policy</a></div>
+      </div>
+    </div>
+    <div class="fbot">
+      <div class="socials"><a href="#">𝕏</a><a href="#">@</a><a href="#">◉</a><a href="#">in</a></div>
+      <div class="copy">© Velox Themes. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- quiz modal -->
+<div class="modal" id="modal">
+  <div class="box">
+    <button class="x" id="modalX" aria-label="Close">×</button>
+    <h3>Find Your Perfect Template and Get <span class="r">20% OFF</span></h3>
+    <p>Discover your design style in 60 seconds and get 20% OFF your perfect template.</p>
+    <button class="btn">Take the quiz <span class="ar">↗</span></button>
+    <button class="no" id="modalNo">No thanks, I don't want 20% off</button>
+  </div>
+</div>
+
+<script>
+// ---- FAQ (content from reference) ----
+const FAQ = [
+["Do I need to know how to code to use these templates?","Nope! All Velox templates are built 100% in Framer, so you can customize everything visually. No code needed"],
+["How do I access my purchase?","You can find your templates after purchase by accessing our Polar <a href='#'>customer portal</a>"],
+["Can I get a refund after purchase?","Since these are digital products with instant access after purchase, there's no way for us to remove the link once it's been shared, which means we can't offer refunds. That said, if you run into any issues, just reach out, we're here to help and will do our best to support you."],
+["Can I use one template for multiple clients?","Yes! Make sure to choose the right license to use the template on unlimited client projects."],
+["Will I get updates if the template changes?","Yes. If we update the template or add improvements, you'll get access to the latest version by re-remixing the template"],
+["Do you offer support after purchase?","Yes! We're happy to help you set up your template, fix bugs, or guide you through features that come with the original design. Our goal is to make sure your website looks just like the demo and runs smoothly on Framer."],
+["Can I get help with custom changes or new components?",""],
+["Can we book a call or screen share session?","We currently don't offer live calls or 1-on-1 sessions. Our support is 100% async, meaning we'll guide you through email, docs, or videos. This helps us respond faster and keep support fair for everyone."],
+["I've customized the template a lot and something broke. Can you fix it?","Once you make major changes, it's hard for us to debug since it's no longer the same setup. We'll try to point you in the right direction, but we can't guarantee a fix for heavily modified templates. If you need advanced troubleshooting, we recommend hiring a developer familiar with Framer."],
+["Can I pay extra for a custom version or setup help?","We don't offer paid customization or setup services at the moment. Our focus is on building great templates and providing clear support for what's included. If you need something custom, we recommend hiring a Framer expert who can tailor it to your needs."]
+];
+const acc = document.getElementById('acc');
+FAQ.forEach(([q, a]) => {
+  const d = document.createElement('div');
+  d.className = 'qrow';
+  d.innerHTML = `<button type="button">${q}<span class="pm">+</span></button><div class="ans"><p>${a || '&nbsp;'}</p></div>`;
+  acc.appendChild(d);
+});
+acc.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const row = b.parentElement, ans = row.querySelector('.ans'), open = row.classList.toggle('open');
+  ans.style.maxHeight = open ? ans.scrollHeight + 'px' : 0;
+});
+
+// ---- nav shadow ----
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+
+// ---- reveal on scroll ----
+const io = new IntersectionObserver(es => es.forEach(x => x.isIntersecting && x.target.classList.add('in')), {threshold:.15});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// ---- showcase carousel ----
+const SHOW = [
+  {img:"https://framerusercontent.com/images/oNYL19YwwbdubjA0KVIQyzbsI.png?scale-down-to=2048&width=2986&height=1708", site:"LogicFox", tpl:"Sadewa"},
+  {img:"https://framerusercontent.com/images/05t85hT5iHcqeOnDnSEPBAQgMpU.png?scale-down-to=2048&width=3016&height=1720", site:"Sadewa Studio", tpl:"Nakula"}
+];
+let si = 0;
+const prevs = document.querySelectorAll('.sho-card .prev img');
+function show(i){
+  si = (i + SHOW.length) % SHOW.length;
+  prevs.forEach(p => p.classList.toggle('on', +p.dataset.i === si));
+  document.getElementById('shoName').firstChild.textContent = SHOW[si].site;
+  document.getElementById('shoTpl').textContent = SHOW[si].tpl;
+}
+document.getElementById('shoPrev').onclick = () => show(si - 1);
+document.getElementById('shoNext').onclick = () => show(si + 1);
+
+// ---- quiz modal ----
+const modal = document.getElementById('modal');
+document.getElementById('quizBtn').onclick = () => modal.classList.add('on');
+document.getElementById('modalX').onclick = document.getElementById('modalNo').onclick = () => modal.classList.remove('on');
+modal.onclick = e => { if (e.target === modal) modal.classList.remove('on'); };
+</script>
+</body>
+</html>

@@ -32,8 +32,16 @@
 | Fixed nav | scroll | stays top, white bg | — | MEASURED position:fixed |
 
 ## Discrepancy log (post-build)
-| Component/state | Mismatch | Priority | Fix | Recheck |
+| Component/state | Mismatch | Priority | Fix | Recheck evidence |
 | --- | --- | --- | --- | --- |
-| Framer editor mockup | reference plays demo video (Rama Edit mp4) | med | embed hotlinked video, poster fallback | screenshot cmp |
-| Quiz 20% OFF popup | auto/exit-intent trigger unknown | low | included as manual modal, no auto-show | — |
-| Video playback states | not observable in probe engine | low | thumbnail/play overlay only where video blocked | — |
+| Section reveal on fullpage capture | thum capture raced 0.7s transition → faded text | high | resolved: transition 0.4s + `?static=1` capture stabilization (logged) | band2_components: text dark ✓ |
+| Footer social icons | placeholder glyphs ≠ X/Threads/IG/LinkedIn | low | resolved: 𝕏 @ ◎ in + ©2026 | band2_tail ✓ |
+| Hours section | heading wrap + row tint + strip color | med | resolved: max-width 520, rgba red tint rows/strip | band4/band2 ✓ |
+| Framer Components heading | missing entirely | high | resolved: heading + subtext added | band4_carousel ✓ |
+| 3D carousel content | landscape UI shots vs ref people portraits | med | resolved (approx): 4 people portraits cycled; frame density smaller than ref | band5_carousel ✓ |
+| Framer chip icon | block glyph | low | resolved (approx): Framer-blocks SVG, not official glyph | band5 ✓ |
+| CTA red arc | missing | low | resolved: static SVG arc (ref motion unobserved → static) | band4_cta ✓ |
+| True mobile viewport (390 CSS px) | thum `width/390` renders desktop layout scaled (both sides) | med | approximate: media queries 810/1199 present in source; true-mobile render unverified | — |
+| Quiz 20% OFF popup | auto/exit-intent trigger unknown | low | approximate: manual modal, no auto-show | — |
+| Motion timing (hover/entrance) | Lightpanda tanpa getAnimations; thum noanimate | low | approximate: measured CSS .4s only; JS timings labeled estimates | motion record |
+| Framer editor demo video | plays via hotlinked mp4 | low | implemented; playback unverified in static captures | — |
